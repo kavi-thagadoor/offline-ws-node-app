@@ -18,7 +18,6 @@ const io = new Server(server, {
 app.get('/test', (req, res) => {
   res.send('Socket.IO server is running!');
 });
-
 io.on('connection', socket => {
   console.log('Client connected:', socket.id);
 
@@ -31,6 +30,7 @@ io.on('connection', socket => {
     console.log('Client disconnected');
   });
 });
+
 
 server.listen(3000, '0.0.0.0', () => {
   console.log('Server running on http://localhost:3000');
